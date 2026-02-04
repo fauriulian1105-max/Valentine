@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<title>Valentine 💖</title>
+
+<style>
+  /* ===== FUNDAL ROZ + ELEMENTE FLOTANTE ===== */
+  body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    background: #ffd6e8; /* roz deschis */
+    color: #333;
+    position: relative;
+    text-align: center;
+  }
+
+  body > * {
+    position: relative;
+    z-index: 2; /* tot ce e peste fundal */
+  }
+
+  /* ===== TEXT PRINCIPAL ===== */
+  h1 {
+    margin-top: 50px;
+    font-size: 48px;
+    font-family: 'Parisienne', cursive;
+    text-shadow: 0 0 10px rgba(0,0,0,0.2);
+    color: #ff4d6d;
+  }
+
+  /* ===== URSULEȚ ===== */
+  #bear {
+    width: 220px;
+    margin: 20px auto;
+    display: block;
+    filter: drop-shadow(0 0 15px rgba(0,0,0,0.2));
+  }
+
+  /* ===== MESAJ ===== */
+  #message {
+    font-size: 22px;
+    min-height: 40px;
+    margin-top: 15px;
+    font-weight: 500;
+  }
+
+  /* ===== BUTOANE ===== */
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<title>Valentine 💖</title>
+
+<style>
+  body {
+    margin:0; height:100vh; font-family:'Arial',sans-serif; overflow:hidden; 
+    background:#ffd6e8; color:#333; position:relative; text-align:center;
+  }
+  body>* { position: relative; z-index:2; }
+
+  h1 { margin-top:50px; font-size:48px; font-family:'Parisienne',cursive;
+       text-shadow:0 0 10px rgba(0,0,0,0.2); color:#ff4d6d; }
+
+  #bear { width:220px; margin:20px auto; display:block; filter: drop-shadow(0 0 15px rgba(0,0,0,0.2)); }
+  #message { font-size:22px; min-height:40px; margin-top:15px; font-weight:500; }
+
+  .area { position:relative; height:300px; margin-top:20px; }
+  button { position:absolute; padding:14px 30px; font-size:22px; border-radius:30px; border:none; cursor:pointer;
+           transition: transform 0.3s, background 0.3s; box-shadow:0 5px 15px rgba(0,0,0,0.2); }
+  #yesBtn { background:#ff4d6d; color:white; }
+  #yesBtn:hover { transform:scale(1.1); background:#ff6f91; }
+  #noBtn { background:#555; color:white; left:45%; top:180px; }
+  #noBtn:hover { transform:scale(1.05); background:#777; }
+
+  .floating { position:absolute; bottom:-50px; font-size:16px; color:#ff77aa; opacity:0.6; pointer-events:none; user-select:none; animation:floatUp linear infinite; }
+  @keyframes floatUp { 0%{transform:translateY(0) scale(0.5); opacity:0;} 10%{opacity:1;} 100%{transform:translateY(-110vh) scale(1); opacity:0;} }
+</style>
+</head>
+
+<body>
+
+<h1>Vrei să fii Valentine-ul meu? 💘</h1>
+<img id="bear" src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
+
+<div class="area">
+  <button id="yesBtn" style="left:35%;top:60px;">DA 💕</button>
+  <button id="noBtn">NU 😢</button>
+</div>
+
+<div id="message"></div>
+
+<script>
+  const messages = [
+    "Chiar vrei să spui NU? 🥺",
+    "Ursulețul e trist… 🧸",
+    "Promit flori și ciocolată 🌹",
+    "Nu mă iubești? 💔",
+    "Ultima șansă… 🥹"
+  ];
+  let scale=1, count=0;
+  const yes=document.getElementById("yesBtn");
+  const no=document.getElementById("noBtn");
+  const area=document.querySelector(".area");
+  const msg=document.getElementById("message");
+
+  no.onclick=()=>{
+    msg.textContent=messages[count%messages.length];
+    count++; scale+=0.25; yes.style.transform=`scale(${scale})`;
+    const maxX=area.clientWidth-yes.offsetWidth*scale;
+    const maxY=area.clientHeight-yes.offsetHeight*scale;
+    yes.style.left=Math.random()*maxX+"px";
+    yes.style.top=Math.random()*maxY+"px";
+  };
+
+  yes.onclick=()=>location.href="love.html";
+
+  const icons=['💖','💞','💘','⭐','✨'];
+  for(let i=0;i<30;i++){
+    const span=document.createElement('span');
+    span.className='floating';
+    span.innerText=icons[Math.floor(Math.random()*icons.length)];
+    span.style.left=Math.random()*100+'vw';
+    span.style.fontSize=12+Math.random()*24+'px';
+    span.style.animationDuration=6+Math.random()*7+'s';
+    span.style.animationDelay=Math.random()*5+'s';
+    document.body.appendChild(span);
+  }
+</script>
+
+</body>
+</html>
+
