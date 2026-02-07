@@ -4,12 +4,34 @@
 <meta charset="UTF-8">
 <title>Poze 📸</title>
 <style>
-  body{margin:0;height:100vh;font-family:'Arial',sans-serif;overflow:hidden;background:#ffd6e8;color:#333;position:relative;text-align:center;}
+  body{margin:0;height:100vh;font-family:'Arial',sans-serif;overflow:auto;background:#ffd6e8;color:#333;position:relative;text-align:center;}
   body>*{position:relative;z-index:2;}
   h1{margin-top:30px;font-size:48px;color:#ff4d6d;text-shadow:0 0 10px rgba(0,0,0,0.2);}
-  .gallery{display:flex;justify-content:center;align-items:center;gap:30px;flex-wrap:nowrap;margin-top:40px;}
-  .gallery img{width:250px;height:250px;border-radius:15px;object-fit:cover;transition:transform 0.3s;box-shadow:0 5px 15px rgba(0,0,0,0.2);}
-  .gallery img:hover{transform:scale(1.1);}
+.gallery{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:40px;
+  max-width:800px;
+  margin:40px auto;
+  justify-items:center;
+}
+
+.gallery img{
+  width:320px;
+  height:320px;
+  border-radius:20px;
+  object-fit:cover;
+  transition:transform 0.3s;
+  box-shadow:0 8px 20px rgba(0,0,0,0.25);
+}
+
+.gallery img:hover{
+  transform:scale(1.1);
+}
+
+.gallery img:last-child{
+  grid-column: span 2;
+}
   button{margin-top:20px;padding:12px 24px;font-size:20px;border-radius:25px;border:none;cursor:pointer;transition:0.3s;}
   button:hover{transform:scale(1.05);}
   .floating{position:absolute;bottom:-50px;font-size:16px;color:#ff77aa;opacity:0.6;pointer-events:none;user-select:none;animation:floatUp linear infinite;}
@@ -17,13 +39,13 @@
 </style>
 </head>
 <body>
-<h1>Galerie 📸</h1>
+<h1>Poze 📸</h1>
 <div class="gallery">
-  <img src="https://picsum.photos/seed/1/250" alt="">
-  <img src="https://picsum.photos/seed/2/250" alt="">
-  <img src="https://picsum.photos/seed/3/250" alt="">
-  <img src="https://picsum.photos/seed/4/250" alt="">
-  <img src="https://picsum.photos/seed/5/250" alt="">
+  <img src="imagini/1.jfif">
+  <img src="imagini/2.jfif">
+  <img src="imagini/3.jfif">
+  <img src="imagini/4.jfif">
+  <img src="imagini/5.webp">
 </div>
 <button onclick="history.back()">Înapoi</button>
 

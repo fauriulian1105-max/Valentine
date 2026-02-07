@@ -3,23 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <title>Scrisoare 💌</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+
 <style>
-  body{margin:0;height:100vh;font-family:'Arial',sans-serif;overflow:hidden;background:#ffd6e8;color:#333;text-align:center;position:relative;}
+  body{
+    margin:0;
+    min-height:100vh;
+    font-family:'Arial',sans-serif;
+    overflow:auto;
+    background:#ffd6e8;
+    color:#333;
+    text-align:center;
+    position:relative;
+  }
+
   body>*{position:relative;z-index:2;}
-  h1{margin-top:50px;font-size:48px;font-family:'Parisienne',cursive;color:#ff4d6d;text-shadow:0 0 10px rgba(0,0,0,0.2);}
-  p{margin:20px auto;font-size:24px;width:80%;line-height:1.5;color:#444;}
-  #ring{width:100px;margin-top:20px;}
-  button{margin-top:20px;padding:12px 24px;font-size:20px;border-radius:25px;border:none;cursor:pointer;transition:0.3s;}
+
+  h1{
+    margin-top:40px;
+    font-size:48px;
+    font-family:'Parisienne',cursive;
+    color:#ff4d6d;
+    text-shadow:0 0 10px rgba(0,0,0,0.2);
+  }
+
+  /* FOAIA DE SCRISOARE */
+  .letter{
+    max-width:800px;
+    margin:30px auto;
+    background:#fff7fb;
+    padding:40px 50px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+    text-align:left;
+    font-size:22px;
+    line-height:1.8;
+    color:#444;
+  }
+
+  .letter p{
+    margin-bottom:22px;
+  }
+
+  .salut{
+    font-weight:bold;
+    font-size:24px;
+  }
+
+  .semnatura{
+    margin-top:35px;
+    font-style:italic;
+    font-size:24px;
+    text-align:right;
+  }
+
+  #ring{
+    width:200px;
+    margin-top:40px;
+  }
+
+  button{
+    margin:40px 0;
+    padding:18px 40px;
+    font-size:26px;
+    border-radius:35px;
+    border:none;
+    cursor:pointer;
+    transition:0.3s;
+  }
+
   button:hover{transform:scale(1.05);}
-  .floating{position:absolute;bottom:-50px;font-size:16px;color:#ff77aa;opacity:0.6;pointer-events:none;user-select:none;animation:floatUp linear infinite;}
-  @keyframes floatUp{0%{transform:translateY(0) scale(0.5);opacity:0;}10%{opacity:1;}100%{transform:translateY(-110vh) scale(1);opacity:0;}}
+
+  .floating{
+    position:absolute;
+    bottom:-50px;
+    font-size:16px;
+    color:#ff77aa;
+    opacity:0.6;
+    pointer-events:none;
+    user-select:none;
+    animation:floatUp linear infinite;
+  }
+
+  @keyframes floatUp{
+    0%{transform:translateY(0) scale(0.5);opacity:0;}
+    10%{opacity:1;}
+    100%{transform:translateY(-110vh) scale(1);opacity:0;}
+  }
 </style>
 </head>
+
 <body>
+
 <h1>O scrisoare pentru tine 💌</h1>
-<p>Dragostea mea pentru tine crește în fiecare zi. Fiecare moment cu tine este magic, iar inima mea bate doar pentru tine. 💖</p>
-<img id="ring" src="https://media.giphy.com/media/3o6ZtaO9BZHcOjmErm/giphy.gif" alt="Inel animat">
+
+<div class="letter">
+  <p class="salut">Pentru iubita mea,</p>
+
+  <p>Vreau să încep prin a spune evidentul, te iubesc și te voi iubi mereu. Nu pot să-mi imaginez să faci ceva care ar putea schimba asta.Ai apărut în viața mea la momentul perfect și m-ai susținut când a fost greu, și chiar și când am fost departe, ne-am apropiat din nou ca și cum nimic nu s-ar fi schimbat. Mai aproape chiar. Vreau să-ți mulțumesc pentru asta.</p>
+
+  <p>Ești incredibilă. Îți spun asta tot timpul, dar muncești serios de greu și depui efort maxim în fiecare lucru mic, și ador asta. Îmi place felul în care gândești și planifici viitorul nostru împreună. Îmi place felul în care mă incluzi în acel viitor.Sunt îndrăgostit de tot ce e la tine. Îmi plac ochii tăi, cât de mari sunt și cum îi rostogolești când spun ceva prost.</p>
+
+  <p>Dar cred că ceea ce iubesc cel mai mult este inima ta. Ești o persoană atât de bună. Mintea ta e un pic nebună și o iubesc și pe asta. Vreau să știu mai multe despre ce se întâmplă acolo.Îmi doresc și mă rog ca totul să meargă bine între noi.</p>
+
+  <p>Vreau să știi că sunt susținătorul tău numărul unu. Voi fi mereu aici pentru tine, prin bune și prin rele.Toate aceste cuvinte și încă nu pot exprima tot ce simt pentru tine. Ești fata visurilor mele. Vreau să-mi trăiesc viața cu tine.</p>
+
+
+  <p>Te iubesc cu toată inima mea.</p>
+
+  <p class="semnatura">
+    Pentru totdeauna al tău,<br>
+    ❤️ Iulică
+  </p>
+</div>
+
+<img id="ring" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWhoY29wZm50dXI3ajkwa2x5YXNlcGx0aGNxYWo4ZXljdXl5eDRlZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iQrZZfBDblslbCrTvr/giphy.gif" alt="Inel animat">
+
 <br>
 <button onclick="history.back()">Înapoi</button>
 
@@ -36,6 +136,6 @@
     document.body.appendChild(span);
   }
 </script>
+
 </body>
 </html>
-

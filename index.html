@@ -5,67 +5,17 @@
 <title>Valentine 💖</title>
 
 <style>
-  /* ===== FUNDAL ROZ + ELEMENTE FLOTANTE ===== */
-  body {
-    margin: 0;
-    height: 100vh;
-    font-family: 'Arial', sans-serif;
-    overflow: hidden;
-    background: #ffd6e8; /* roz deschis */
-    color: #333;
-    position: relative;
-    text-align: center;
-  }
-
-  body > * {
-    position: relative;
-    z-index: 2; /* tot ce e peste fundal */
-  }
-
-  /* ===== TEXT PRINCIPAL ===== */
-  h1 {
-    margin-top: 50px;
-    font-size: 48px;
-    font-family: 'Parisienne', cursive;
-    text-shadow: 0 0 10px rgba(0,0,0,0.2);
-    color: #ff4d6d;
-  }
-
-  /* ===== URSULEȚ ===== */
-  #bear {
-    width: 220px;
-    margin: 20px auto;
-    display: block;
-    filter: drop-shadow(0 0 15px rgba(0,0,0,0.2));
-  }
-
-  /* ===== MESAJ ===== */
-  #message {
-    font-size: 22px;
-    min-height: 40px;
-    margin-top: 15px;
-    font-weight: 500;
-  }
-
-  /* ===== BUTOANE ===== */
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-<meta charset="UTF-8">
-<title>Valentine 💖</title>
-
-<style>
   body {
     margin:0; height:100vh; font-family:'Arial',sans-serif; overflow:hidden; 
     background:#ffd6e8; color:#333; position:relative; text-align:center;
   }
   body>* { position: relative; z-index:2; }
 
-  h1 { margin-top:50px; font-size:48px; font-family:'Parisienne',cursive;
+  h1 { margin-top:50px; font-size:40px; font-family:'Parisienne',cursive;
        text-shadow:0 0 10px rgba(0,0,0,0.2); color:#ff4d6d; }
 
-  #bear { width:220px; margin:20px auto; display:block; filter: drop-shadow(0 0 15px rgba(0,0,0,0.2)); }
-  #message { font-size:22px; min-height:40px; margin-top:15px; font-weight:500; }
+  #bear { width:250px; margin:20px auto; display:block; filter: drop-shadow(0 0 15px rgba(0,0,0,0.2)); }
+  #message { font-size:40px; min-height:40px; margin-top:15px; font-weight:300; }
 
   .area { position:relative; height:300px; margin-top:20px; }
   button { position:absolute; padding:14px 30px; font-size:22px; border-radius:30px; border:none; cursor:pointer;
@@ -83,7 +33,7 @@
 <body>
 
 <h1>Vrei să fii Valentine-ul meu? 💘</h1>
-<img id="bear" src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
+<img id="bear" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHFvd2Z3ZXBvN3B2MWZicGQxamlnMWV4a3l0c3c2dzExdDJlbGZkeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/52IISRYqpTcpdsP7Th/giphy.gif">
 
 <div class="area">
   <button id="yesBtn" style="left:35%;top:60px;">DA 💕</button>
@@ -95,29 +45,47 @@
 <script>
   const messages = [
     "Chiar vrei să spui NU? 🥺",
-    "Ursulețul e trist… 🧸",
+    "Iulică e trist… 🧸",
     "Promit flori și ciocolată 🌹",
     "Nu mă iubești? 💔",
-    "Ultima șansă… 🥹"
+    "Ultima șansă… 😢",
+    "DA TU CHIAR VREI BĂTAIE? 😈",
+    "Am glumit... te iubesc 💖",
+    "Haideee, știu că vrei 😘"
   ];
-  let scale=1, count=0;
-  const yes=document.getElementById("yesBtn");
-  const no=document.getElementById("noBtn");
-  const area=document.querySelector(".area");
-  const msg=document.getElementById("message");
 
-  no.onclick=()=>{
-    msg.textContent=messages[count%messages.length];
-    count++; scale+=0.25; yes.style.transform=`scale(${scale})`;
-    const maxX=area.clientWidth-yes.offsetWidth*scale;
-    const maxY=area.clientHeight-yes.offsetHeight*scale;
-    yes.style.left=Math.random()*maxX+"px";
-    yes.style.top=Math.random()*maxY+"px";
+  let count = 0;
+  let scale = 1;
+
+  const yes = document.getElementById("yesBtn");
+  const no  = document.getElementById("noBtn");
+  const area = document.querySelector(".area");
+  const msg = document.getElementById("message");
+
+  // DA – rămâne pe loc
+  yes.onclick = () => {
+    location.href = "love.html";
   };
 
-  yes.onclick=()=>location.href="love.html";
+  // NU – fuge + DA crește
+  no.onclick = () => {
+    msg.textContent = messages[count % messages.length];
+    count++;
 
-  const icons=['💖','💞','💘','⭐','✨'];
+    // mărim DA
+    scale += 0.25;
+    yes.style.transform = `scale(${scale})`;
+
+    // mutăm NU
+    const maxX = area.clientWidth - no.offsetWidth;
+    const maxY = area.clientHeight - no.offsetHeight;
+
+    no.style.left = Math.random() * maxX + "px";
+    no.style.top  = Math.random() * maxY + "px";
+  };
+
+  // inimioare
+  const icons = ['💖','💞','💘','⭐','✨'];
   for(let i=0;i<30;i++){
     const span=document.createElement('span');
     span.className='floating';
